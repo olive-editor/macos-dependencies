@@ -20,7 +20,7 @@ jobs:
             compiler-name: Clang LLVM
             os-name: macOS
             os-arch: x86_64
-            os: macos-10.15
+            os: macos-11.0
             cmake-gen: Ninja
     name: |
       ${{ matrix.os-name }}
@@ -31,7 +31,7 @@ jobs:
 
     steps:
       - name: Checkout Source Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@master
@@ -62,7 +62,7 @@ jobs:
       #    zip -r $PKGNAME.zip Olive.app
 
       #- name: Upload Artifact to GitHub
-      #  uses: actions/upload-artifact@v2
+      #  uses: actions/upload-artifact@v3
       #  continue-on-error: true
       #  with:
       #    name: ${{ env.PKGNAME }}.zip
